@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Игра</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в NFT-игру!</h1>
+    <p id="user-info">Загрузка...</p>
+    
+    <button onclick="sendToTour()">Отправить артиста в тур</button>
+    <button onclick="upgradeCard()">Улучшить карточку</button>
+    
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Разворачиваем мини-приложение
+
+        document.getElementById("user-info").innerText = `Привет, ${tg.initDataUnsafe.user.first_name}!`;
+
+        function sendToTour() {
+            alert("Артист отправлен в тур!");
+        }
+
+        function upgradeCard() {
+            alert("Карточка улучшена!");
+        }
+    </script>
+</body>
+</html>
